@@ -6,7 +6,12 @@ Barebones Docker Ruby + Postgres setup for VirtualBox + Windows on mounted drive
 2. Your VM mounted with your Windows folder (check this tutorial out: https://askubuntu.com/questions/45594/where-is-virtualbox-shared-folders-mounted-in-a-virtual-guest). In Ubuntu, you'll also have to have GuestAdditions installed. Your shared folder will show up in `/media`
 
 ## Steps
-1. Boot up your VM
+1. Boot up your VM, make sure it's updated.
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
 2. Install Docker 
 ``` 
 $ sudo apt install docker.io docker-compose
