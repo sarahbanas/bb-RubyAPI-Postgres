@@ -6,22 +6,23 @@ Barebones Docker Ruby + Postgres setup for VirtualBox + Windows on mounted drive
 2. Your VM mounted with your Windows folder (check this tutorial out: https://askubuntu.com/questions/45594/where-is-virtualbox-shared-folders-mounted-in-a-virtual-guest). In Ubuntu, you'll also have to have GuestAdditions installed. Your shared folder will show up in `/media`
 
 ## Steps
-1. Boot up your VM, make sure it's updated.
+1. Clone this project into your shared mounted Windows folder. This could be your shared folder, too. If it is, make sure it's mounted in your VM and shows up in `/media`
+3. Boot up your VM, make sure it's updated.
 ```
 $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
 
-2. Install Docker 
+4. Install Docker 
 ``` 
 $ sudo apt install docker.io docker-compose
 $ sudo systemctl start docker
 $ sudo systemctl enable docker
 ```
-2a. For S&G, make sure you actually did install docker:
-`$ docker --version` 
+3a. For S&G, make sure you actually did install docker:
+`$ docker --version` # should get docker version number
 
-3. Create a volume:
+4. Create a volume:
 `$ docker volume create --name NAMEYOURVOLUME --driver local`
 
 HIGHLY RECOMMENDED OPTIONAL 
@@ -67,7 +68,7 @@ Change WHATEVER_USERNAME/PASSWORD.
 13. In your Windows browser (not VM, because if you're running a server VM, you won't have that):
 type in the IP:PORT to see if your rails app is up and running. Example (if you left the default port to 3000):
 `129.134.0.0:3000`
-14. Success!
+14. Success! Keep your VM running but now you can use your favorite editor in Windows.
 
 # References
 + Documentation initially taken from https://docs.docker.com/compose/rails/#connect-the-database
