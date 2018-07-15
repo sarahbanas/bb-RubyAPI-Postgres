@@ -26,7 +26,7 @@ $ sudo systemctl enable docker
 `$ docker volume create --name NAMEYOURVOLUME --driver local`
 
 HIGHLY RECOMMENDED OPTIONAL 
-4. You can change the folder names, username, and passwords in Dockerfile and docker-compose (highly recommended)
+You can change the folder names, username, and passwords in Dockerfile and docker-compose (highly recommended)
 In Dockerfile: change `/railsapi` to whatever you want
 In docker-compose.yml change 
 * `/railsapi` to whatever you put in Dockerfile
@@ -34,9 +34,12 @@ In docker-compose.yml change
 * `POSTGRESS_USER` to whatever user you want for postgres
 
 5. Change `data-railsapi` in docker-compose.yml to whatever your volume name you created in step 3.
-6. While this setup is made to use the --api tag, you can choose to build the full ruby suite. 
+6. While this setup is made to use the --api tag, you can choose to build the full ruby suite.
+
 FOR API: `$ docker-compose run web rails new . --api --T --force --database=postgresql`
+
 FOR FULL: `$ docker-compose run web rails new . --force --database=postgresql`
+
 7. `$ docker-compose build`
 8. Go to `config/database.yml` and replace with:
 ```
