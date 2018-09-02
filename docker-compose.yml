@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: postgres:10.4-alpine
+    image: postgres:10.5-alpine
     restart: always
     volumes:
       - data-railsapi:/var/lib/postgresql/data
